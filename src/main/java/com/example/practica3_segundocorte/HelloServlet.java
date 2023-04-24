@@ -25,7 +25,7 @@ public class HelloServlet extends HttpServlet {
         Connection conn = (Connection) req.getAttribute("conn");
         ProductoService service = new ProductoServiceImpl(conn);
         ;
-        //agregamos
+        //agregamos productos
         ProductoRepositoryImpl productoCategoryRepository=new ProductoRepositoryImpl();
         ProductoCategory producto1=new ProductoCategory();
         Category category=new Category("fruta",3);
@@ -36,7 +36,7 @@ public class HelloServlet extends HttpServlet {
         productoCategoryRepository.save(producto1);
         //demás codigo aqui...
 
-        //eliminar
+        //eliminamos productos
         ProductoCategory productoUpdate=productoCategoryRepository.getById(2L);
         productoCategoryRepository.delateById(productoUpdate.getId());
 
